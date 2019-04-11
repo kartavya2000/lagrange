@@ -41,7 +41,7 @@ i=int(input("Enter the index of function you want: "))
 
 en=lagrange(n,i)
 en1=lagrange(n-1,i)           
-oth=math.log(en/en1)/math.log(n-1/n)
+oth=math.log(en/en1)/math.log((n-1)/n)
 print("{} {}".format(en,oth))      
 
 
