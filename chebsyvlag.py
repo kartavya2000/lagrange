@@ -1,3 +1,4 @@
+#the overall solving strategy is same in this file as the lagrange one butthe only change is in the line 18 where the chebysev points are used instead of equidistant points in the domain
 import math
 import numpy as np
 
@@ -14,7 +15,7 @@ def lagrange(n,i):
             return (1+25*(x**2))**(-1)
     
     
-    xj=[math.cos((2*j+1)*math.pi/(2*n+2)) for j in range(0,n+1)]
+    xj=[math.cos((2*j+1)*math.pi/(2*n+2)) for j in range(0,n+1)]#creating a set of chebysev pointsin {-1,1}
     yj=[func(i,x) for x in xj]
 
     mat=np.matrix([[x**j for j in range(0,n+1)] for x in xj])
