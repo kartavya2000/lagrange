@@ -2,8 +2,8 @@ import math
 import numpy as np
 
 
-def lagrange(n,i):
-    def func(i,x):
+def lagrange(n,i):              #defining the function to give the value required by the problem statement
+    def func(i,x):          #a function to determint the function required to evaluate . The index value 1 to 4 for each type of function 
         if(i==1):
             return math.sin(x)
         elif(i==2):
@@ -17,10 +17,10 @@ def lagrange(n,i):
     xj=[(-1+2*j/n) for j in range(0,n+1)]
     yj=[func(i,x) for x in xj]
 
-    mat=np.matrix([[x**j for j in range(0,n+1)] for x in xj])
+    mat=np.matrix([[x**j for j in range(0,n+1)] for x in xj])#solving the equation and finding the coefficients of required polynomial correspondigng to lagrange interpolation. the coefficients are then stored in the sol array
     sol=np.linalg.solve(mat,np.array(yj))
 
-    def P(sol,x,n):
+    def P(sol,x,n):#the polynomial required
         i=0
         sum=0
         while(i<=n):
